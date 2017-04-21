@@ -42,9 +42,13 @@ namespace FileAccessApp
                 lblWarning.ForeColor = Color.Purple;
                 lblWarning.Text = "File read Successfully!";
             }
-            catch(FileNotFoundException exc)
+            catch (FileNotFoundException exc)
             {
                 lblWarning.ForeColor = Color.Red;
+                lblWarning.Text = "The file was not found\n" + exc.Message;
+            }
+            catch (Exception exc)
+            {
                 lblWarning.Text = exc.Message;
             }
         }
